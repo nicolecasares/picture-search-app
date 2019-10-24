@@ -1,86 +1,18 @@
-# Webpack 4 Boilerplate for beginners
-A basic webpack 4 boilerplate for beginners to start with any JS/ES6 based project. This project uses basic html with scss. It includes working background images in scss as well as file loading in html. Uses Dev Server and Sourcemaps for easy debugging. Includes stylelinting and fixes for cleaner css. Uses Babel to convert ES6 to ES5. 
-<br>
-## Guide
-This basic boilerplate is the final output of this comprehensive write up on Medium, plus several additions. I recommend to read this article to know the insight of how you can configure webpack from scratch.
-[Webpack 3 quickstarter: Configure webpack from scratch](https://medium.com/@nirjhor123/webpack-3-quickstarter-configure-webpack-from-scratch-30a6c394038a)
-<br>
-1. Navigate to the appropriate parent folder of where your project will be located. This example uses a folder on the desktop called "class projects". NOTE: Start from your home directory "~".
+this app is using pixabay api to search for images by the keyword the user inputs in the form 
+we will be using a fetch to returns a promise as a placeholder for a response we are going to get asynchronously
+when the user adds a keyword in the 'search-term' we will add that term to a url that uses the api and our api key a
+that will then return json information
+we will then loop though that json information add use the images information to display the images requested onto the image div with an id of images.
+if the user inputs an invalid keyword we will add a catch to display an error to the user "sorry, no results found"
+to add a better user experence we add a function to remove old photos when a new key word is requested.
 
-```
-$ cd desktop/class-projects
-```
-
-2. Clone the webpack-starter into your parent folder with the following command:
-
-```
-$ git clone https://github.com/SJCCodeTalk/webpack-starter.git
-```
-3. Change the name of webpack-starter to reflect the name of your project
-
-4. Change your directory to the project folder. 
-
-```
-$ cd new-project
-```
-
-5. Install dependencies
-
-```
-$ npm install
-```
-
-
-6.  Develop locally with webpack-dev-server
-
-```
-$ npm run dev
-```
-
-## For Development version
-
-```
-$ npm run dev
-```
-
-In your browser, navigate to: [http://localhost:2000/](http://localhost:2000/)
-
-## For Production version
-
-```
-$ npm run build
-```
-This is the final distribution version of your project located in the /dist folder
-
-### To restart your project after leaving it
-
-1. Navigate to your project folder in terminal
-
-2. Run Dev. 
-
-```
-$ npm run dev
-```
-
-Note: it is safe to move from dev to build and build to dev. Just run [control] "c" to cancel dev processes if in the dev version.
- 
-## Loaders and Plugins used in this boilerplate
-
-### Loaders
-* html-loader
-* sass-loader
-* css-loader
-* style-loader
-* file-loader
-* babel-loader
-
-### Plugins
-* clean-webpack-plugin
-* mini-css-extract-plugin
-* html-webpack-plugin
-* style-lint-plugin
-* optimize-css-assets-webpack-plugin
-* uglify-js-plugin
-
-# gh
-# picture-search-app
+//TASKS
+1. set up the endpoint to add url, the search term, and api key
+2. fetch the json data and return that data
+3. then console log the data and add variable for data.hits (which is a list of objects)
+4. loop though the objects to extract the images
+5. Through the loop: for every image create an image element, add a source url of image, and append that image. the source will can know where to pull image from 
+6. add a catch to return a failed response 
+7. add a function to delete images once a new search term is added 
+8. create a function that will call the function that will clear images and then call the function that will get image results 
+9. add an event listener to call the function you created on step 8
